@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('layout/header.ejs') %>
+
+    <body>
+        <%- include('layout/nav.ejs') %>
+            <main class="container">
+                <h1>Update G2 Information</h1>
+                <form action="/api/updateLicense" method="POST" class="row mb-5">
+                    <div class="col-6 col-offset-3">
+                        <fieldset class="row">
+                            <legend>Update your Information</legend>
+                            <div class="form-group col-6 mb-3">
+                                <label for="firstName">First Name</label>
+                                <input name="firstName" id="firstName" type="text" class="form-control"
+                                    value="<%= data.firstName %>" placeholder="Enter First Name" required readonly>
+                            </div>
+                            <div class="form-group col-6 mb-3">
+                                <label for="lastName">Last Name</label>
+                                <input name="lastName" id="lastName" type="text" class="form-control"
+                                    value="<%= data.lastName %>" placeholder="Enter Last Name" required readonly>
+                            </div>
+                            <div class="form-group col-6 mb-3">
+                                <label for="licenseNo">License Number</label>
+                                <input name="licenseNo" id="licenseNo" type="text" class="form-control"
+                                    value="<%= data.licenseNo %>" placeholder="Enter License Number" maxlength="8"
+                                    required readonly>
+                            </div>
+                            <div class="form-group col-6 mb-3">
+                                <label for="age">Age</label>
+                                <input name="age" id="age" type="number" class="form-control" value="<%= data.age %>"
+                                    placeholder="Enter Your Age" required readonly>
+                            </div>
+                            <div class="form-group col-6 mb-3">
+                                <label for="dateOfBirth">Date of birth</label>
+                                <input name="dateOfBirth" id="dateOfBirth" type="date" class="form-control"
+                                    value="<%= data.dateOfBirth %>" placeholder="Enter Your Date of Birth" required
+                                    readonly>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="row">
+                            <legend>Car Details</legend>
+                            <div class="form-group col-6 mb-3">
+                                <label for="ieMake">IE Make</label>
+                                <input name="carDetails[ieMake]" id="ieMake" type="text" class="form-control"
+                                    placeholder="Enter company name" required value="<%= data.carDetails.ieMake %>">
+                            </div>
+                            <div class="form-group col-6 mb-3">
+                                <label for="model">Model</label>
+                                <input name="carDetails[model]" id="model" type="text" class="form-control"
+                                    placeholder="Enter model" required value="<%= data.carDetails.model %>">
+                            </div>
+                            <div class="form-group col-6 mb-3">
+                                <label for="year">Year</label>
+                                <input name="carDetails[year]" id="year" type="number" class="form-control"
+                                    placeholder="Enter year" required value="<%= data.carDetails.year %>">
+                            </div>
+                            <div class="form-group col-6 mb-3">
+                                <label for="platNumber">Plat Number</label>
+                                <input name="carDetails[platNumber]" id="platNumber" type="text" class="form-control"
+                                    placeholder="Enter Plat Number" required value="<%= data.carDetails.platNumber %>">
+                            </div>
+                        </fieldset>
+                        <button type="submit" class="btn btn-primary col-3 mt-2">Update</button>
+                    </div>
+                </form>
+            </main>
+    </body>
+
+</html>

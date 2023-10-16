@@ -1,0 +1,20 @@
+header {
+    height: 25rem;
+    background-color: #464d53;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+h1 {
+    font-weight: 700;
+}
+
+h4 {
+    font-weight: 300;
+}
+
+.dashboard-section {
+    padding: 5rem 20rem;
+}
